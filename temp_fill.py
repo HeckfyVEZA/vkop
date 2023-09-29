@@ -12,7 +12,7 @@ def doc_fil(info):
     from docx.shared import Inches
     from pathlib import Path
     from io import BytesIO
-    temp_path = Path("C:\\Users\\novikov.rn\\Desktop\\VKOPatel\\vkop_template.docx")
+    temp_path = Path("vkop_template.docx")
     d = doc(temp_path)
     obj_styles = d.styles
     obj_charstyle = obj_styles.add_style('CommentsStyle', WD_STYLE_TYPE.CHARACTER)
