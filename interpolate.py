@@ -6,7 +6,7 @@ def forming_formula(lx, ly, x):
     import numpy as np
     xi = np.array(lx)
     yi = np.array(ly)
-    t = np.polyfit(xi, yi, 4)
+    t = np.polyfit(xi, yi, 7)
     formula = ''
     for i in range(len(t)):
         formula+=f"(({t[i]})*(x**{len(t)-i-1}))+"
