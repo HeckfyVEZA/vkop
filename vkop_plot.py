@@ -13,7 +13,7 @@ def draw_plot(vkop, zQ, zp):
     ip = np.array([ff(Qs, list_pk, i) for i in Qq])
     s = np.array(Qs)
     cht = np.array(list_pk)
-    plt.scatter(s, cht, linewidth= 3, color="#26822F")
+    # plt.scatter(s, cht, linewidth= 3, color="#26822F")
     plt.plot(Qq, ip, linewidth=4, color="#26822F")
     plt.scatter(np.array(zQ), np.array(zp), color="#FF642B", linewidths=4)
     plt.grid(True)
