@@ -8,15 +8,6 @@ from pathlib import Path
 from re import findall
 from interpolate import forming_formula as ff
 st.set_page_config(layout="wide")
-page_bg_img = '''
-<style>
-.stApp {
-background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 33%, #26E544 100%);
-}
-</style>
-<meta name="apple-mobile-web-app-capable" content="yes">
-'''
-st.markdown(page_bg_img, unsafe_allow_html=True)
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
 z = st.columns(2)
 st.session_state.object = z[0].text_input("Объект")
