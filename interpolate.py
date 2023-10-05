@@ -10,7 +10,6 @@ def forming_formula(lx, ly, x):
     import numpy as np
     xi = np.array(lx)
     yi = np.array(ly)
-    t = np.polyfit(xi, yi, 7)
-    t = np.poly1d(np.polyfit(xi, yi, 7))
+    t = np.poly1d(np.polyfit(xi, yi, 3))
     a = t(x)
     return a
