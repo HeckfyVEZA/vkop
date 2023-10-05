@@ -15,5 +15,7 @@ def forming_formula(lx, ly, x):
     for i in range(len(t)):
         formula+=f"(({t[i]})*(x**{len(t)-i-1}))+"
     formula = formula[:-1]
+    import streamlit as st
+    st.write(a)
     a = round(eval(formula), 2)
     return a
