@@ -5,6 +5,7 @@ from io import BytesIO
 from parameters_vkop import *
 import pandas as pd
 from pathlib import Path
+from re import findall
 from interpolate import forming_formula as ff
 st.set_page_config(layout="wide")
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
