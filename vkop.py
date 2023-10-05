@@ -5,6 +5,7 @@ from io import BytesIO
 from parameters_vkop import *
 import pandas as pd
 from pathlib import Path
+from interpolate import forming_formula as ff
 st.set_page_config(layout="wide")
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
 z = st.columns(2)
@@ -47,6 +48,8 @@ try:
     ops = [f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}" for item in vkop_list(st.session_state.p, st.session_state.Q)]
     item = vlist[ops.index(choice)]
     cols[-1].write(f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}")
+    kluch = findall(r"-(\d\d\d-)", item[0])[0]+'Н'+findall(r"(-\d\d\d\d\d/\d)-", item[0])[0]
+    item[2] = ff(df[kluch], list_p, st.session_state.Q)
     cols[-1].write(f"Статическое давление (расчётное) {int(item[2])} Па")
     cols[-1].image(image_vkop[st.session_state.VKOP])
     gdf = gaba_vkop[st.session_state.VKOP][item[0]]
