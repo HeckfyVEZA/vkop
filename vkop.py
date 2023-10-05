@@ -63,29 +63,29 @@ try:
     else:
         dops = []
     from temp_fill import doc_fil
-    st.write("Нажмите, пожалуйста, на одну из нижеидущих кнопок.")
-    corr = st.button("Подобрано корректно")
-    uncorr = st.button("Подобрано НЕкорректно")
-    st.markdown("---")
-    if corr:
-        df = pd.read_excel(Path("logs.xlsx")).to_dict()
-        df = {key: [df[key][i] for i in df[key].keys()] for key in df.keys()}
-        df['Номенклатура'].append(f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}")
-        df['Инженер'].append(st.session_state.engineer)
-        df['Расход'].append(st.session_state.Q)
-        df['Давление'].append(st.session_state.p)
-        df['Корректность'].append("Корректно".upper())
-        pd.DataFrame(df).to_excel(Path("logs.xlsx"), index=False)
-    elif uncorr:
-        df = pd.read_excel(Path("logs.xlsx")).to_dict()
-        df = {key: [df[key][i] for i in df[key].keys()] for key in df.keys()}
-        df['Номенклатура'].append(f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}")
-        df['Инженер'].append(st.session_state.engineer)
-        df['Расход'].append(st.session_state.Q)
-        df['Давление'].append(st.session_state.p)
-        df['Корректность'].append("неКорректно".upper())
-        pd.DataFrame(df).to_excel(Path("logs.xlsx"), index=False)
+    # st.write("Нажмите, пожалуйста, на одну из нижеидущих кнопок.")
+    # corr = st.button("Подобрано корректно")
+    # uncorr = st.button("Подобрано НЕкорректно")
+    # st.markdown("---")
+    # if corr:
+    #     df = pd.read_excel(Path("logs.xlsx")).to_dict()
+    #     df = {key: [df[key][i] for i in df[key].keys()] for key in df.keys()}
+    #     df['Номенклатура'].append(f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}")
+    #     df['Инженер'].append(st.session_state.engineer)
+    #     df['Расход'].append(st.session_state.Q)
+    #     df['Давление'].append(st.session_state.p)
+    #     df['Корректность'].append("Корректно".upper())
+    #     pd.DataFrame(df).to_excel(Path("logs.xlsx"), index=False)
+    # elif uncorr:
+    #     df = pd.read_excel(Path("logs.xlsx")).to_dict()
+    #     df = {key: [df[key][i] for i in df[key].keys()] for key in df.keys()}
+    #     df['Номенклатура'].append(f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}")
+    #     df['Инженер'].append(st.session_state.engineer)
+    #     df['Расход'].append(st.session_state.Q)
+    #     df['Давление'].append(st.session_state.p)
+    #     df['Корректность'].append("неКорректно".upper())
+    #     pd.DataFrame(df).to_excel(Path("logs.xlsx"), index=False)
     st.download_button('Скачать лист подбора', data=doc_fil([f"{st.session_state.innumber} от {st.session_state.fromnum}",st.session_state.orderer,st.session_state.object,st.session_state.system,st.session_state.manager,st.session_state.engineer,f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}",st.session_state.Q,st.session_state.p,item[1],item[2],image_vkop[st.session_state.VKOP],st.session_state.plot,gdf,dops]), file_name=f"{st.session_state.system}.docx")
 except Exception as er:
     pass
-    st.write(er)
+    # st.write(er)
