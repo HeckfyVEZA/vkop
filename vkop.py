@@ -28,7 +28,7 @@ try:
     choice = cols[0].radio("Выбор нужного вентилятора", options=ops)
     item = vlist[ops.index(choice)]
     st.session_state.plot = draw_plot(choice, st.session_state.Q, st.session_state.p)
-    cols[0].image(st.session_state.plot)
+    cols[1].image(st.session_state.plot)
     prev = pd.read_excel(Path("logs.xlsx")).to_dict()
     prev = {key: [prev[key][i] for i in prev[key].keys()] for key in prev.keys()}
     prevQ = list(map(lambda x: str(int(x)), prev["Расход"]))
