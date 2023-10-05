@@ -11,11 +11,6 @@ def forming_formula(lx, ly, x):
     xi = np.array(lx)
     yi = np.array(ly)
     t = np.polyfit(xi, yi, 7)
-    formula = ''
-    for i in range(len(t)):
-        formula+=f"(({t[i]})*(x**{len(t)-i-1}))+"
-    formula = formula[:-1]
-    import streamlit as st
-    st.markdown(formula.replace("*","\*"))
-    a = round(eval(formula), 2)
+    t = np.poly1d(np.polyfit(xi, yi, 7))
+    a = t(x)
     return a
