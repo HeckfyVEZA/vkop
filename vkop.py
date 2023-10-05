@@ -57,9 +57,15 @@ try:
     gdf = {key:[str(gdf[key])] for key in gdf.keys()}
     cols[-1].dataframe(gdf)
     if st.session_state.VKOP[-1]=='0':
-        st.session_state.stam = cols[-1].selectbox('Стакан', options = (f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220",f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220У",f"СТАМ 400-{stam[item[0].split('-')[0]]}-Н",f"СТАМ 405-{stam[item[0].split('-')[0]]}-Н",))
-        st.session_state.pek = cols[-1].selectbox('Переходник крышный', options=(f"ПЕК-ОСА-{item[0].split('-')[0]}-С",))
-        dops = ["Дополнительное оборудование", f"Стакан монтажный {st.session_state.stam}", f"Переходник крышный {st.session_state.pek}"]
+        st.session_state.pek = cols[-1].selectbox('Переходник крышный', options=(f"ПЕК-ОСА-{item[0].split('-')[0]}-С", "Без переходника"))
+        if st.session_state.pek != "Без переходника":
+            st.session_state.stam = cols[-1].selectbox('Стакан', options = (f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220",f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220У",f"СТАМ 400-{stam[item[0].split('-')[0]]}-Н",f"СТАМ 405-{stam[item[0].split('-')[0]]}-Н", "Без стакана"))
+        if st.session_state.pek == "Без переходника":
+            dops = []
+        elif st.session_state.stam == "Без стакана":
+            dops = ["Дополнительное оборудование", f"Переходник крышный {st.session_state.pek}"]
+        else:
+            dops = ["Дополнительное оборудование", f"Стакан монтажный {st.session_state.stam}", f"Переходник крышный {st.session_state.pek}"]
     else:
         dops = []
     from temp_fill import doc_fil
