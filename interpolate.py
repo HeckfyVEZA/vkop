@@ -16,6 +16,6 @@ def forming_formula(lx, ly, x):
         formula+=f"(({t[i]})*(x**{len(t)-i-1}))+"
     formula = formula[:-1]
     import streamlit as st
-    st.markdown(formula, unsafe_allow_html=True)
+    st.markdown(formula)
     a = round(eval(formula), 2)
     return a
