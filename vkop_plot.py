@@ -10,7 +10,7 @@ def draw_plot(vkop, zQ, zp):
     list_pk = [list_p[i] for i in range(len(Qs))]
     Qq = sum([[Qs[i], (Qs[i]+Qs[i])/2] for i in range(len(Qs)-1)], [])+ [Qs[-1]]
     Qq = np.array(Qq)
-    ip = np.array([ff(Qq, list_pk, i) for i in Qq])
+    ip = np.array([ff(Qs, list_pk, i) for i in Qq])
     s = np.array(Qs)
     cht = np.array(list_pk)
     plt.scatter(s, cht, linewidth= 3, color="#26822F")
