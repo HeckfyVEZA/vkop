@@ -13,7 +13,7 @@ def draw_plot(vkop, zQ, zp):
     cht = np.array(list_pk)
     plt.scatter(s, ip, linewidth= 3, color="#26822F")
     plt.plot(s, cht, linewidth=4, color="#26822F")
-    plt.scatter(np.array(zQ), np.array(zp-7), color="#FF642B", linewidths=4)
+    plt.scatter(np.array(zQ), np.array(zp), color="#FF642B", linewidths=4)
     plt.grid(True)
     plt.xlabel('Расход воздуха, м³/ч')
     plt.ylabel('Статическое давление, Па')
