@@ -49,7 +49,7 @@ try:
     ops = [f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}" for item in vkop_list(st.session_state.p, st.session_state.Q)]
     item = vlist[ops.index(choice)]
     cols[-1].write(f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}")
-    kluch = findall(r"-(\d\d\d-)", item[0])[0]+'Н'+findall(r"(-\d\d\d\d\d/\d)-", item[0])[0]
+    kluch = item[0]
     item[2] = ff(df[kluch], list_p, st.session_state.Q)
     cols[-1].write(f"Статическое давление (расчётное) {int(item[2])} Па")
     cols[-1].image(image_vkop[st.session_state.VKOP])
