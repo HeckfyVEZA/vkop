@@ -24,9 +24,9 @@ st.session_state.Q = c[1].number_input('Расход', step=1)
 st.session_state.p = c[1].number_input('Статическое давление', step=1)
 w = 300
 if st.session_state.VKOP == "ВКОП 0":
-    c[2].image("https://i.postimg.cc/qMQ4vrZD/image.png", width=w)
+    c[2].image("https://i.postimg.cc/qMQ4vrZD/image.png", width=w, caption='ВКОП 0')
 else:
-    c[2].image("https://i.postimg.cc/V6RbR6RQ/image.png", width=w)
+    c[2].image("https://i.postimg.cc/V6RbR6RQ/image.png", width=w, caption='ВКОП 1')
 cols = st.columns(3)
 try:
     st.session_state.ops = (f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}" for item in vkop_list(st.session_state.p, st.session_state.Q))
