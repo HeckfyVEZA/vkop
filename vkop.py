@@ -10,7 +10,7 @@ from interpolate import forming_formula as ff
 st.set_page_config(layout="wide")
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
 z = st.columns(2)
-st.session_state.object = z[0].text_input("Объект")
+st.session_state.object = st.sidebar.text_input("Объект")
 st.session_state.system = z[0].text_input("Номер системы")
 st.session_state.orderer = z[1].text_input("Заказчик")
 st.session_state.innumber = z[1].text_input("Номер проекта")
