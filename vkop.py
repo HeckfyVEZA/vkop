@@ -22,7 +22,7 @@ st.session_state.VKOP = c[0].selectbox("Какой ВКОП нужен?", option
 st.session_state.climate = c[0].selectbox("Климатическое исполнение", options=("У1", "УХЛ1", "Т1"))
 st.session_state.Q = c[1].number_input('Расход', step=1)
 st.session_state.p = c[1].number_input('Статическое давление', step=1)
-w = 300
+w = 270
 if st.session_state.VKOP == "ВКОП 0":
     c[2].image("https://i.postimg.cc/qMQ4vrZD/image.png", width=w, caption='ВКОП 0')
 else:
