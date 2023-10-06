@@ -22,6 +22,10 @@ st.session_state.VKOP = c[0].selectbox("Какой ВКОП нужен?", option
 st.session_state.climate = c[0].selectbox("Климатическое исполнение", options=("У1", "УХЛ1", "Т1"))
 st.session_state.Q = c[1].number_input('Расход', step=1)
 st.session_state.p = c[1].number_input('Статическое давление', step=1)
+if st.session_state.VKOP == "ВКОП 0":
+    c[2].image("https://i.postimg.cc/qMQ4vrZD/image.png")
+else:
+    c[2].image("https://i.postimg.cc/QxYwzdzD/image.png")
 cols = st.columns(3)
 try:
     st.session_state.ops = (f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}" for item in vkop_list(st.session_state.p, st.session_state.Q))
