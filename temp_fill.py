@@ -4,7 +4,7 @@ def pictu(your_image_url):
     response = requests.get(your_image_url)
     binary_img = BytesIO(response.content)
     return binary_img
-def doc_fil(info):
+def doc_fil(info, filial="ВЕЗА-Центр"):
     from docx.enum.style import WD_STYLE_TYPE
     from docx.shared import Pt
     from datetime import date
@@ -12,7 +12,10 @@ def doc_fil(info):
     from docx.shared import Inches
     from pathlib import Path
     from io import BytesIO
-    temp_path = Path("vkop_template.docx")
+    if filial == "ВЕЗА-Центр":
+        temp_path = Path("vkop_template.docx")
+    elif filial == "ВЕЗА-СПБ":
+        temp_path = Path("vkop_template_spb.docx")
     d = doc(temp_path)
     obj_styles = d.styles
     obj_charstyle = obj_styles.add_style('CommentsStyle', WD_STYLE_TYPE.CHARACTER)
