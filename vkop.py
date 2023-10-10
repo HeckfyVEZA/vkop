@@ -32,8 +32,8 @@ elif st.session_state.filial == "ВЕЗА-Центр":
     st.session_state.engineer = st.sidebar.selectbox("Выполнил", options=tuple(map(lambda x: ' '.join(x.split()[:2]),('Гарифов Руслан Расилевич','Колесова Вероника Александровна','Мануйлова Анастасия Олеговна','Петрова Татьяна Сергеевна','Иванов Дмитрий Анатольевич','Гришина Регина Эдуардовна','Бубнова Александра Валерьевна','Игнащенко Антон Павлович','Кушхова Наталья Владимировна','Малахов Никита Александрович','Петелин Павел Владимирович','Прохоренко Ольга Сергеевна','Царьков Игорь Владиславович','Бурын Федор Александрович','Сухов Дмитрий Сергеевич'))))
 st.session_state.VKOP = c[0].selectbox("Какой ВКОП нужен?", options=("ВКОП 0", "ВКОП 1"))
 st.session_state.climate = c[0].selectbox("Климатическое исполнение", options=("У1", "УХЛ1", "Т1"))
-st.session_state.Q = c[1].number_input('Расход', step=1)
-st.session_state.p = c[1].number_input('Статическое давление', step=1)
+st.session_state.Q = c[1].number_input('Расход, м³/ч', step=1)
+st.session_state.p = c[1].number_input('Статическое давление, Па', step=1)
 w = 270
 if st.session_state.VKOP == "ВКОП 0":
     c[-1].image("https://i.postimg.cc/qMQ4vrZD/image.png", width=w, caption='ВКОП 0')
