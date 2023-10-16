@@ -21,7 +21,7 @@ def draw_plot(vkop, zQ, zp):
     plt.scatter(np.array(zQ), np.array(zp), color="#FF642B", linewidths=4)
     kpd_p = [f(zQ, zp, i) for i in Qs]
     dot = kpd_find(Qs, list_pk, zQ, zp)
-    plt.plot(Qs, kpd_p, linewidth=1, color="#48B454")
+    plt.plot(Qs, kpd_p, linewidth=3, color="#48B454")
     plt.scatter([dot[0]], [dot[1]], linewidth=4, color="#48B454")
     plt.grid(True)
     plt.xlabel('Расход воздуха, м³/ч')
