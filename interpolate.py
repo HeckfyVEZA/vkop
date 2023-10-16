@@ -18,6 +18,7 @@ def f(x1, y1, x):
 def anti_f(x1, y1, y):
     return (((x1**2)/y1)*y)**.5
 def kpd_find(rx, ry, xi, yi):
+    import numpy as np
     t = np.poly1d(np.polyfit(rx, ry, 5))
     cx = xi
     cy = f(xi, yi, cx)
