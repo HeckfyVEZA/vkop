@@ -18,12 +18,12 @@ def draw_plot(vkop, zQ, zp):
     cht = np.array(list_pk)
     # plt.scatter(s, cht, linewidth= 3, color="#26822F")
     plt.plot(Qq, ip, linewidth=4, color="#26822F")
-    plt.scatter(np.array(zQ), np.array(zp), color="#FF642B", linewidths=4)
     kpd_p = [f(zQ, zp, i) for i in Qs]
     Qsn = Qs[:len(kpd_p)]
     dot = kpd_find(Qs, list_pk, zQ, zp)
     plt.plot(Qsn, kpd_p, linewidth=3, color="#48B454")
     plt.scatter([dot[0]], [dot[1]], linewidth=4, color="#48B454")
+    plt.scatter(np.array(zQ), np.array(zp), color="#FF642B", linewidths=4)
     plt.grid(True)
     plt.xlabel('Расход воздуха, м³/ч')
     plt.ylabel('Статическое давление, Па')
