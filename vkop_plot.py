@@ -19,6 +19,7 @@ def draw_plot(vkop, zQ, zp):
     # plt.scatter(s, cht, linewidth= 3, color="#26822F")
     plt.plot(Qq, ip, linewidth=4, color="#26822F")
     kpd_p = [f(zQ, zp, i) for i in Qs]
+    kpd_p = [k for k in kpd_p if k<=max(list_p)]
     Qsn = Qs[:len(kpd_p)]
     dot = kpd_find(Qs, list_pk, zQ, zp)
     plt.plot(Qsn, kpd_p, linewidth=3, color="#48B454")
