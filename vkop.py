@@ -7,13 +7,10 @@ import pandas as pd
 from pathlib import Path
 from re import findall
 from interpolate import forming_formula as ff
+import json
 st.set_page_config(layout="wide")
 def json_fo(infoss):
-        import json
-        from io import BytesIO
-        output = BytesIO() 
-        json.dump(infoss, output)
-        return output
+        return json.dumps(infoss)
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
 # z = st.columns(2)
 st.sidebar.markdown('<h1>Общая информация</h1>', unsafe_allow_html=True)
