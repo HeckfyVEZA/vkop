@@ -24,7 +24,7 @@ def draw_plot(vkop, zQ, zp):
     Qse = sum([[Qse[i], (Qse[i]+Qse[i])/2] for i in range(len(Qse)-1)], [])+ [Qse[-1]]
     Qse = sum([[Qse[i], (Qse[i]+Qse[i])/2] for i in range(len(Qse)-1)], [])+ [Qse[-1]]
     kpd_p = [f(zQ, zp, i) for i in Qse]
-    kpd_p = [k for k in kpd_p if k<=max(list_pk)]
+    kpd_p = [k for k in kpd_p if k<=900]
     Qsn = [anti_f(zQ, zp, i) for i in kpd_p]
     dot = kpd_find(Qs, list_pk, zQ, zp)
     plt.plot(np.array(Qsn), np.array(kpd_p), linewidth=2, color="#48B454")
