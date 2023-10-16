@@ -74,7 +74,7 @@ try:
     # item[2] = ff(df[kluch], list_p, st.session_state.Q)
     qus = [itt for itt in df[kluch] if itt!=None]
     pus = list_p[:len(qus)]
-    kpd_Q, kpd_p = list(map(lambda x: round(x, 0), kpd_find(qus, pus, st.session_state.Q, st.session_state.p)))
+    kpd_Q, kpd_p = list(map(lambda x: int(round(x, 0)), kpd_find(qus, pus, st.session_state.Q, st.session_state.p)))
     item[2] = kpd_p
     item[1] = kpd_Q
     cols[-1].write(f"Статическое давление (расчётное) {kpd_p} Па")
