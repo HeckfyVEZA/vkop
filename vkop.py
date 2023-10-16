@@ -120,7 +120,7 @@ try:
  "system_number":st.session_state.system, "manager":st.session_state.manager, 
  "engineer":st.session_state.engineer, "fan_name": f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}", 
  "given_Q":st.session_state.Q, "given_p":st.session_state.p, "real_Q":item[1], "real_p":item[2], "extra":dops
-}, file_name=f"{st.session_state.system}.json")
+}), file_name=f"{st.session_state.system}.json")
 except Exception as er:
     pass
     # st.write(er)
