@@ -18,8 +18,12 @@ def draw_plot(vkop, zQ, zp):
     cht = np.array(list_pk)
     # plt.scatter(s, cht, linewidth= 3, color="#26822F")
     plt.plot(Qq, ip, linewidth=4, color="#26822F")
-    # Qse = 
-    kpd_p = [f(zQ, zp, i) for i in Qs]
+    Qse = sum([[Qs[i], (Qs[i]+Qs[i])/2] for i in range(len(Qs)-1)], [])+ [Qs[-1]]
+    Qse = sum([[Qse[i], (Qse[i]+Qse[i])/2] for i in range(len(Qse)-1)], [])+ [Qse[-1]]
+    Qse = sum([[Qse[i], (Qse[i]+Qse[i])/2] for i in range(len(Qse)-1)], [])+ [Qse[-1]]
+    Qse = sum([[Qse[i], (Qse[i]+Qse[i])/2] for i in range(len(Qse)-1)], [])+ [Qse[-1]]
+    Qse = sum([[Qse[i], (Qse[i]+Qse[i])/2] for i in range(len(Qse)-1)], [])+ [Qse[-1]]
+    kpd_p = [f(zQ, zp, i) for i in Qse]
     kpd_p = [k for k in kpd_p if k<=900]
     Qsn = [anti_f(zQ, zp, i) for i in kpd_p]
     dot = kpd_find(Qs, list_pk, zQ, zp)
