@@ -111,7 +111,7 @@ try:
     def json_fo(infoss):
         import json
         from io import BytesIO
-        output = BytesIO(json.dump(infoss))
+        output = BytesIO()
         with open(output, "w") as fp: 
             json.dump(infoss, fp)
         return output
