@@ -8,6 +8,13 @@ from pathlib import Path
 from re import findall
 from interpolate import forming_formula as ff
 st.set_page_config(layout="wide")
+def json_fo(infoss):
+        import json
+        from io import BytesIO
+        output = BytesIO()
+        with open(output, "w") as fp: 
+            json.dump(infoss, fp)
+        return output
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
 # z = st.columns(2)
 st.sidebar.markdown('<h1>Общая информация</h1>', unsafe_allow_html=True)
@@ -108,13 +115,6 @@ try:
     #     df['Давление'].append(st.session_state.p)
     #     df['Корректность'].append("неКорректно".upper())
     #     pd.DataFrame(df).to_excel(Path("logs.xlsx"), index=False)
-    def json_fo(infoss):
-        import json
-        from io import BytesIO
-        output = BytesIO()
-        with open(output, "w") as fp: 
-            json.dump(infoss, fp)
-        return output
     st.download_button('Скачать лист подбора', data=doc_fil([f"{st.session_state.innumber} от {st.session_state.fromnum}",st.session_state.orderer,st.session_state.object,st.session_state.system,st.session_state.manager,st.session_state.engineer,f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}",st.session_state.Q,st.session_state.p,item[1],item[2],image_vkop[st.session_state.VKOP],st.session_state.plot,gdf,dops], filial=st.session_state.filial), file_name=f"{st.session_state.system}.docx")
     st.download_button("Скачать JSON", data=json_fo({"project_num":st.session_state.innumber, "project_date":st.session_state.fromnum,
  "client": st.session_state.orderer, "object_name": st.session_state.object,
