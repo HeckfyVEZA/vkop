@@ -8,6 +8,7 @@ from pathlib import Path
 from re import findall
 from interpolate import forming_formula as ff
 import json
+from interpolate import kpd_find
 st.set_page_config(layout="wide")
 def json_fo(infoss):
         return json.dumps(infoss)
@@ -71,7 +72,11 @@ try:
     cols[-1].write(f"{st.session_state.VKOP}-{item[0]}-{st.session_state.climate}")
     kluch = item[0]
     item[2] = ff(df[kluch], list_p, st.session_state.Q)
-    cols[-1].write(f"Статическое давление (расчётное) {int(item[2])} Па")
+    qus = [itt for itt in df[kluch] if itt!=None]
+    pus = list_p[:len(qus)]
+    kpd_Q, kpd_p = kpd_find(qus, pus, st.session_state.Q, st.session_state.p)
+    cols[-1].write(f"Статическое давление (расчётное) {kpd_p} Па")
+    cols[-1].write(f"Расход (расчётный) {kpd_Q} м³/ч")
     cols[-1].image(image_vkop[st.session_state.VKOP])
     gdf = gaba_vkop[st.session_state.VKOP][item[0]]
     gdf = {key:[str(gdf[key])] for key in gdf.keys()}
