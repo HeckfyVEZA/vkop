@@ -11,9 +11,8 @@ st.set_page_config(layout="wide")
 def json_fo(infoss):
         import json
         from io import BytesIO
-        output = BytesIO()
-        with open(output, "w") as fp: 
-            json.dump(infoss, fp)
+        output = BytesIO() 
+        json.dump(infoss, output)
         return output
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
 # z = st.columns(2)
