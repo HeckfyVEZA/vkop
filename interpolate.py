@@ -17,9 +17,15 @@ def f(x1, y1, x):
     return (y1/(x1**2))*x**2
 def anti_f(x1, y1, y):
     return (((x1**2)/y1)*y)**.5
-def kpd_find(rx, ry, xi, yi):
+def kpd_find(lx, ly, xi, yi):
+    lx = sum([[lx[i], (lx[i]+lx[i])/2] for i in range(len(lx)-1)], [])+ [lx[-1]]
+    ly = sum([[ly[i], (ly[i]+ly[i])/2] for i in range(len(ly)-1)], [])+ [ly[-1]]
+    lx = sum([[lx[i], (lx[i]+lx[i])/2] for i in range(len(lx)-1)], [])+ [lx[-1]]
+    ly = sum([[ly[i], (ly[i]+ly[i])/2] for i in range(len(ly)-1)], [])+ [ly[-1]]
+    lx = sum([[lx[i], (lx[i]+lx[i])/2] for i in range(len(lx)-1)], [])+ [lx[-1]]
+    ly = sum([[ly[i], (ly[i]+ly[i])/2] for i in range(len(ly)-1)], [])+ [ly[-1]]
     import numpy as np
-    t = np.poly1d(np.polyfit(rx, ry, 5))
+    t = np.poly1d(np.polyfit(lx, ly, 5))
     cx = xi
     cy = f(xi, yi, cx)
     ny = t(cx)
