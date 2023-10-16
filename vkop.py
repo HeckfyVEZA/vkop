@@ -120,7 +120,7 @@ try:
 }), file_name=f"{st.session_state.system}.json")
 except Exception as er:
     pass
-    # st.write(er)
+    st.write(er)
 # st.download_button("Скачать JSON", data=json_fo({"project_num":st.session_state.innumber, "project_date":st.session_state.fromnum,
 #  "client": st.session_state.orderer, "object_name": st.session_state.object,
 #  "system_number":st.session_state.system, "manager":st.session_state.manager, 
