@@ -1,6 +1,6 @@
 from parameters_vkop import *
 from interpolate import forming_formula as ff
-from interpolate import f, kpd_find
+from interpolate import f, kpd_find, anti_f
 import time
 def draw_plot(vkop, zQ, zp):
     time.sleep(.2)
@@ -20,7 +20,7 @@ def draw_plot(vkop, zQ, zp):
     plt.plot(Qq, ip, linewidth=4, color="#26822F")
     kpd_p = [f(zQ, zp, i) for i in Qs]
     kpd_p = [k for k in kpd_p if k<=max(list_p)]
-    Qsn = Qs[:len(kpd_p)]
+    Qsn = [anti_f(zQ, zp, i) for i in kpd_p]
     dot = kpd_find(Qs, list_pk, zQ, zp)
     plt.plot(Qsn, kpd_p, linewidth=3, color="#48B454")
     plt.scatter([dot[0]], [dot[1]], linewidth=4, color="#48B454")
