@@ -10,7 +10,6 @@ from interpolate import forming_formula as ff
 import json
 from interpolate import kpd_find
 st.set_page_config(layout="wide")
-st.balloons()
 def json_fo(infoss):
         return json.dumps(infoss)
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
@@ -128,6 +127,7 @@ try:
 }), file_name=f"{st.session_state.system}.json")
 except Exception as er:
     pass
+    st.balloons()
     # st.write(er)
 # st.download_button("Скачать JSON", data=json_fo({"project_num":st.session_state.innumber, "project_date":st.session_state.fromnum,
 #  "client": st.session_state.orderer, "object_name": st.session_state.object,
