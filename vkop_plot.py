@@ -3,7 +3,7 @@ from interpolate import forming_formula as ff
 from interpolate import f, kpd_find, anti_f
 import time
 def draw_plot(vkop, zQ, zp):
-    time.sleep(.2)
+    time.sleep(.02)
     from re import findall
     kluch = findall(r"-(\d\d\d-)", vkop)[0]+'Н'+findall(r"(-\d\d\d\d\d/\d)-", vkop)[0]
     import matplotlib.pyplot as plt
