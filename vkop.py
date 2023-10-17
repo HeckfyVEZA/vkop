@@ -10,7 +10,7 @@ from interpolate import forming_formula as ff
 import json
 from interpolate import kpd_find
 st.set_page_config(layout="wide")
-st.baloons()
+st.balloons()
 def json_fo(infoss):
         return json.dumps(infoss)
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
