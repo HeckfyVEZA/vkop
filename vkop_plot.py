@@ -11,7 +11,7 @@ def draw_plot(vkop, zQ, zp):
     from io import BytesIO
     Qs = [item for item in df[kluch] if type(item)==float or type(item)==int]
     list_pk = [list_p[i] for i in range(len(Qs))]
-    Qq = sum([[Qs[i], (Qs[i]+Qs[i])/2] for i in range(len(Qs)-1)], [])+ [Qs[-1]]
+    Qq = Qs[:]
     Qq = np.array(Qq)
     ip = np.array([ff(Qs, list_pk, i) for i in Qq])
     s = np.array(Qs)
