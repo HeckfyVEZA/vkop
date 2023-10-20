@@ -18,7 +18,7 @@ def kpd_find(lx, ly, xi, yi):
     cy = f(xi, yi, cx)
     ny = t(cx)
     eps = 10**10
-    while eps>1:
+    while eps>4:
         cy = f(xi, yi, cx)
         ny = t(cx)
         my = cy + ((ny - cy) / 2)
