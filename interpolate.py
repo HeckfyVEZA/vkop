@@ -18,12 +18,17 @@ def kpd_find(lx, ly, xi, yi):
     cy = f(xi, yi, cx)
     ny = t(cx)
     eps = 10**10
+    qi = 10
+    q = 0
     while eps>4:
+        q+=1
         cy = f(xi, yi, cx)
         ny = t(cx)
         my = cy + ((ny - cy) / 2)
         cx = anti_f(xi, yi, my)
         eps = ((f(xi, yi, cx) - t(cx))**2)**.5
+        if q>qi:
+            return [xi, f(xi, yi, cx)]
     try:
         cx = int(round(cx, 0))
     except:
