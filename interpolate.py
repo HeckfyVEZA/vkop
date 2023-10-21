@@ -28,10 +28,12 @@ def kpd_find(lx, ly, xi, yi):
         cx = anti_f(xi, yi, my)
         eps = ((f(xi, yi, cx) - t(cx))**2)**.5
         if q>qi:
-            return [xi, f(xi, yi, cx)]
+            return [xi, t(xi)]
     try:
         cx = int(round(cx, 0))
+        cy = f(xi, yi, cx)
+        return [cx, cy]
     except:
         cx = xi
-    cy = f(xi, yi, cx)
-    return [cx, cy]
+        cy = t(cx)
+        return [cx, cy]
