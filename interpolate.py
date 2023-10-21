@@ -24,6 +24,9 @@ def kpd_find(lx, ly, xi, yi):
         my = cy + ((ny - cy) / 2)
         cx = anti_f(xi, yi, my)
         eps = ((f(xi, yi, cx) - t(cx))**2)**.5
-    cx = int(round(cx, 0))
+    try:
+        cx = int(round(cx, 0))
+    except:
+        cx = xi
     cy = f(xi, yi, cx)
     return [cx, cy]
