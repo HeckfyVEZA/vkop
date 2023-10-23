@@ -2,6 +2,7 @@ from parameters_vkop import *
 from interpolate import forming_formula as ff
 from interpolate import f, kpd_find, anti_f
 import time
+from io import BytesIO
 def draw_plot(vkop, zQ, zp):
     memfile = BytesIO()
     time.sleep(.02)
@@ -9,7 +10,6 @@ def draw_plot(vkop, zQ, zp):
     kluch = findall(r"-(\d\d\d-)", vkop)[0]+'Н'+findall(r"(-\d\d\d\d\d/\d)-", vkop)[0]
     import matplotlib.pyplot as plt
     import numpy as np
-    from io import BytesIO
     Qs = [item for item in df[kluch] if type(item)==float or type(item)==int]
     list_pk = [list_p[i] for i in range(len(Qs))]
     Qq = Qs[:]
