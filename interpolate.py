@@ -34,6 +34,7 @@ def kpd_find(lx, ly, xi, yi):
         xes.append(cx)
         if ii>5:
             cx = sum(xes)/len(xes)
+            ii = 0
         
         eps = ((f(xi, yi, cx) - t(cx))**2)**.5
     # print()
