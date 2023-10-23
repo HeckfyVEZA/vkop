@@ -21,9 +21,10 @@ def draw_plot(vkop, zQ, zp):
     plt.plot(Qq, ip, linewidth=4, color="#26822F")
     Qse = sum([[Qs[i], (Qs[i]+Qs[i])/2] for i in range(len(Qs)-1)], [])+ [Qs[-1]]
     kpd_p = [f(zQ, zp, i) for i in Qse]
+    dot = kpd_find(Qs, list_pk, zQ, zp)
     kpd_p = [k for k in kpd_p if dot[1]-150<=k<=dot[1]+150]
     Qsn = [anti_f(zQ, zp, i) for i in kpd_p]
-    dot = kpd_find(Qs, list_pk, zQ, zp)
+    # dot = kpd_find(Qs, list_pk, zQ, zp)
     plt.plot(np.array(Qsn), np.array(kpd_p), linewidth=1, color="#48B454")
     plt.scatter([dot[0]], [dot[1]], linewidth=4, color="#48B454")
     plt.scatter(np.array(zQ), np.array(zp), color="#FF642B", linewidths=4)
