@@ -19,7 +19,7 @@ def kpd_find(lx, ly, xi, yi):
     
     lx = [i for i in lx if not i is None]
     ly = [ly[li] for li in range(len(lx))]
-    rng = np.arange(min(lx), max(lx), 5)
+    rng = np.arange(min(lx), max(lx), 10)
     t = np.poly1d(np.polyfit(lx, ly, 5))
     kt = np.poly1d(np.polyfit([0, xi], [0, yi], 2))
     result = []
