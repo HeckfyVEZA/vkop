@@ -29,6 +29,7 @@ def draw_plot(vkop, zQ, zp):
     plt.grid(True)
     plt.xlabel('Расход воздуха, м³/ч')
     plt.ylabel('Статическое давление, Па')
+    plt.ylim(min(Qs), max(Qs))
     memfile = BytesIO()
     plt.savefig(memfile)
     return memfile
