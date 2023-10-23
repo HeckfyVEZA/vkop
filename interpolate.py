@@ -16,6 +16,9 @@ def anti_f(x1, y1, y):
     return (((x1**2)/y1)*y)**.5
 def kpd_find(lx, ly, xi, yi):
     import numpy as np
+    
+    lx = [i for i in lx if not i is None]
+    ly = [ly[li] for li in range(len(lx))]
     rng = np.arange(min(lx), max(lx), 10)
     t = np.poly1d(np.polyfit(lx, ly, 5))
     kt = np.poly1d(np.polyfit([0, xi], [0, yi], 2))
