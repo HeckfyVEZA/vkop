@@ -3,6 +3,7 @@ from interpolate import forming_formula as ff
 from interpolate import f, kpd_find, anti_f
 import time
 def draw_plot(vkop, zQ, zp):
+    memfile = BytesIO()
     time.sleep(.02)
     from re import findall
     kluch = findall(r"-(\d\d\d-)", vkop)[0]+'Н'+findall(r"(-\d\d\d\d\d/\d)-", vkop)[0]
@@ -30,6 +31,5 @@ def draw_plot(vkop, zQ, zp):
     plt.xlabel('Расход воздуха, м³/ч')
     plt.ylabel('Статическое давление, Па')
     plt.ylim(0, max(list_pk)+20)
-    memfile = BytesIO()
     plt.savefig(memfile)
     return memfile
