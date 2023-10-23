@@ -24,7 +24,7 @@ def draw_plot(vkop, zQ, zp):
     dot = kpd_find(Qs, list_pk, zQ, zp)
     # kpd_p = [k for k in kpd_p if dot[1]-150<=k<=dot[1]+150 and dot[0]-5000<=anti_f(zQ, zp, k)<=dot[0]+5000]
     # Qsn = [anti_f(zQ, zp, i) for i in kpd_p]
-    Qsn = [anti_f(zQ, zp, zQ), anti_f(zQ, zp, dot[0])]
+    Qsn = [zQ, dot[0]]
     kpd_p = [zp, dot[1]]
     # dot = kpd_find(Qs, list_pk, zQ, zp)
     plt.plot(np.array(Qsn), np.array(kpd_p), linewidth=1, color="#48B454")
