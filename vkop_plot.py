@@ -27,7 +27,7 @@ def draw_plot(vkop, zQ, zp):
     Qsn = [-dot[0], -zQ, 0, zQ, dot[0]]
     kpd_p = [dot[1],zp,0, zp, dot[1]]
     pol_kpd = np.poly1d(np.polyfit(Qsn, kpd_p, 2))
-    ab_d  = ((zQ-dot[0])**2)**.5
+    ab_d  = ((zQ-dot[0])**2)**.5 / 2
     pQsn = [zQ-ab_d, zQ, dot[0], dot[0] + ab_d]
     pkpd_p = [pol_kpd(qwe) for qwe in pQsn]
     # dot = kpd_find(Qs, list_pk, zQ, zp)
