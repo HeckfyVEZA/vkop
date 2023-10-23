@@ -32,7 +32,7 @@ def kpd_find(lx, ly, xi, yi):
         if cx < min(lx):
             cx = min(lx)
         xes.append(cx)
-        if ii>15:
+        if ii>5:
             cx = sum(xes)/len(xes)
         
         eps = ((f(xi, yi, cx) - t(cx))**2)**.5
