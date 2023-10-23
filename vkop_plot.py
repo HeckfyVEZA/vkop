@@ -23,7 +23,7 @@ def draw_plot(vkop, zQ, zp):
     kpd_p = [k for k in kpd_p if k<=900]
     Qsn = [anti_f(zQ, zp, i) for i in kpd_p]
     dot = kpd_find(Qs, list_pk, zQ, zp)
-    # plt.plot(np.array(Qsn), np.array(kpd_p), linewidth=1, color="#48B454")
+    plt.plot(np.array(Qsn), np.array(kpd_p), linewidth=1, color="#48B454")
     plt.scatter([dot[0]], [dot[1]], linewidth=4, color="#48B454")
     plt.scatter(np.array(zQ), np.array(zp), color="#FF642B", linewidths=4)
     plt.grid(True)
