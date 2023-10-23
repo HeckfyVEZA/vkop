@@ -29,7 +29,7 @@ def draw_plot(vkop, zQ, zp):
     pol_kpd = np.poly1d(np.polyfit(Qsn, kpd_p, 2))
     ab_d  = ((zQ-dot[0])**2)**.5
     pQsn = [zQ-ab_d, zQ, dot[0], dot[0] + ab_d]
-    pkpd_p = [pol_kpd(qwe) for qwe in p_Qsn]
+    pkpd_p = [pol_kpd(qwe) for qwe in pQsn]
     # dot = kpd_find(Qs, list_pk, zQ, zp)
     plt.plot(np.array(pQsn), np.array(pkpd_p), linewidth=1, color="#48B454")
     plt.scatter([dot[0]], [dot[1]], linewidth=4, color="#48B454")
