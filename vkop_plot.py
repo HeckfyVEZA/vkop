@@ -5,7 +5,6 @@ import time
 from io import BytesIO
 def draw_plot(vkop, zQ, zp):
     memfile = BytesIO()
-    time.sleep(.02)
     from re import findall
     kluch = findall(r"-(\d\d\d-)", vkop)[0]+'Н'+findall(r"(-\d\d\d\d\d/\d)-", vkop)[0]
     import matplotlib.pyplot as plt
