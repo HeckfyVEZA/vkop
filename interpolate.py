@@ -1,3 +1,8 @@
+def pr(item):
+    q = 1
+    for i in item:
+        q*=i
+    return q
 def forming_formula(lx, ly, x):
     lx = [i for i in lx if i!=None]
     ly = ly[:len(lx)]
@@ -33,7 +38,7 @@ def kpd_find(lx, ly, xi, yi):
             cx = min(lx)
         xes.append(cx)
         if ii>5:
-            cx = sum(xes)/len(xes)
+            cx = pr(xes)**(1/len(xes))
             ii = 0
         
         eps = ((f(xi, yi, cx) - t(cx))**2)**.5
