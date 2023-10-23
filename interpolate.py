@@ -21,10 +21,7 @@ def kpd_find(lx, ly, xi, yi):
     rng = np.arange(min(lx), max(lx), 15)
     t = np.poly1d(np.polyfit(lx, ly, 5))
     kt = np.poly1d(np.polyfit([-xi, 0, xi], [yi, 0, yi], 2))
-    result = []
-    for j in rng:
-        result.append(int(findIntersection(t, kt, j)))
-    result = set(result)
-    cx = min(list(result))
+    result = int(findIntersection(t, kt, xi))
+    cx = result
     cy = int(kt(cx))
     return [cx, cy]
