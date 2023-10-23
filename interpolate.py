@@ -10,13 +10,8 @@ def forming_formula(lx, ly, x):
 def findIntersection(fun1,fun2,x0):
     from scipy.optimize import fsolve
     return fsolve(lambda x : fun1(x) - fun2(x),x0)
-def f(x1, y1, x):
-    return (y1/(x1**2))*x**2
-def anti_f(x1, y1, y):
-    return (((x1**2)/y1)*y)**.5
 def kpd_find(lx, ly, xi, yi):
     import numpy as np
-    
     lx = [i for i in lx if not i is None]
     ly = [ly[li] for li in range(len(lx))]
     rng = np.arange(min(lx), max(lx), 10)
@@ -27,5 +22,5 @@ def kpd_find(lx, ly, xi, yi):
         result.append(int(findIntersection(t, kt, j)))
     result = set(result)
     cx = min(list(result))
-    cy = int(f(xi, yi, cx))
+    cy = int(kt(xi, yi, cx))
     return [cx, cy]
