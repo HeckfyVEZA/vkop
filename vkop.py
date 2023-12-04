@@ -86,7 +86,7 @@ try:
     if st.session_state.VKOP[-1]=='0':
         st.session_state.pek = cols[-1].selectbox('Переходник крышный', options=(f"ПЕК-ОСА-{item[0].split('-')[0]}-С", "Без переходника"))
         if st.session_state.pek != "Без переходника":
-            st.session_state.stam = cols[-1].selectbox('Стакан', options = (f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н", f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220",f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220У",f"СТАМ 400-{stam[item[0].split('-')[0]]}-Н",f"СТАМ 405-{stam[item[0].split('-')[0]]}-Н", "Без стакана"))
+            st.session_state.stam = cols[-1].selectbox('Стакан', options = (f"СТАМ 200-{stam[item[0].split('-')[0]]}-Н", f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220",f"СТАМ 401-{stam[item[0].split('-')[0]]}-Н-MV220У",f"СТАМ 400-{stam[item[0].split('-')[0]]}-Н",f"СТАМ 405-{stam[item[0].split('-')[0]]}-Н", "Без стакана"))
         if st.session_state.pek == "Без переходника":
             dops = []
         elif st.session_state.stam == "Без стакана":
