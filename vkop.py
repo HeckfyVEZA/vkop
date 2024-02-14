@@ -15,7 +15,7 @@ def json_fo(infoss):
 st.markdown('<h1>ПОДБОР ВКОП</h1>', unsafe_allow_html=True)
 # z = st.columns(2)
 st.sidebar.markdown('<h1>Общая информация</h1>', unsafe_allow_html=True)
-st.session_state.filial = st.sidebar.selectbox("Филиал", options=("ВЕЗА-Центр", "ВЕЗА-СПБ"))
+st.session_state.filial = st.sidebar.selectbox("Филиал", options=("ВЕЗА-Москва", "ВЕЗА-СПБ"))
 st.session_state.object = st.sidebar.text_input("Объект")
 st.session_state.orderer = st.sidebar.text_input("Заказчик")
 st.session_state.innumber = st.sidebar.text_input("Номер проекта")
