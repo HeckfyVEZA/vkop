@@ -4,7 +4,7 @@ def pictu(your_image_url):
     response = requests.get(your_image_url)
     binary_img = BytesIO(response.content)
     return binary_img
-def doc_fil(info, filial="ВЕЗА-Центр"):
+def doc_fil(info, filial="ВЕЗА-Москва"):
     from docx.enum.style import WD_STYLE_TYPE
     from docx.shared import Pt
     from datetime import date
@@ -12,7 +12,7 @@ def doc_fil(info, filial="ВЕЗА-Центр"):
     from docx.shared import Inches
     from pathlib import Path
     from io import BytesIO
-    if filial == "ВЕЗА-Центр":
+    if filial == "ВЕЗА-Москва":
         temp_path = Path("vkop_template.docx")
     elif filial == "ВЕЗА-СПБ":
         temp_path = Path("vkop_template_spb.docx")
