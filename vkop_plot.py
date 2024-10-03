@@ -39,4 +39,5 @@ def draw_plot(vkop, zQ, zp):
     plt.ylabel('Статическое давление, Па')
     plt.ylim(0, max(list_pk)+20)
     plt.savefig(memfile)
+    plt.close()
     return memfile
