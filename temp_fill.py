@@ -39,8 +39,11 @@ def doc_fil(info, filial="ВЕЗА-Москва"):
     d.tables[3].rows[5].cells[3].text = info[6].split("-")[-1]
     d.tables[3].rows[1].cells[5].text = str(int(info[6].split("/")[0].split("-")[-1])/100)+"кВт"
     d.tables[3].rows[4].cells[3].text = str(int(info[6].split("-")[1])*10)+"мм"
-    d.tables[4].rows[0].cells[0].add_paragraph().add_run().add_picture(pictu(info[11]), width=Inches(4))
-    d.tables[4].rows[0].cells[1].add_paragraph().add_run().add_picture(info[12], width=Inches(3.5))
+    try:
+        d.tables[4].rows[0].cells[0].add_paragraph().add_run().add_picture(pictu(info[11]), width=Inches(4))
+        d.tables[4].rows[0].cells[1].add_paragraph().add_run().add_picture(info[12], width=Inches(3.5))
+    except:
+        pass
     g = d.tables[5]
     gabs = [[key, info[-2][key][0]] for key in info[-2].keys()]
     for i in range(len(gabs)):
